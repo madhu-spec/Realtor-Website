@@ -1,0 +1,260 @@
+.{
+  padding: 0;
+	margin: 0;
+	font-family: 'Sacramento', cursive;
+	box-sizing: border-box;
+}
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+ 
+/* Navigation bar */
+
+.hero{
+    height: 100vh;
+    width: 100vw; background-image:linear-gradient(
+                                  rgba(0, 0, 0, 0.3) 0%,                                
+                                  rgba(0, 0, 0, 0.0) 70%,
+                                  rgba(0, 0, 0, 0.0) 70%,
+                                  rgba(0, 0, 0, 0.2) 80%,
+                                  rgba(0, 0, 0, 0.7) 90%,
+                                  rgba(0, 0, 0, 0.9) 95%,
+                                  rgba(0, 0, 0, 1.0) 100%
+                                ),  url("images/hero.png");
+    background-size: cover;
+    background-position: center;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 45px;
+    padding-right: 8%;
+    padding-left: 8%;
+}
+
+.logo{
+    height: 110px;
+    cursor: pointer;
+}
+
+/* styling list items start*/
+nav ul li{
+    display: inline-block;   /* So that they come in the same line */
+    list-style-type: none;   /* So that they dont have a bulletin points for ul or numbers for ol */
+    padding: 10px 25px;
+    font-size: 18px;
+}
+
+nav ul li a{
+   color: #9cbcc9;
+   text-decoration: none;   /*To remove the underline effect of the anchor tag*/
+   font-weight: bold;
+   text-transform: uppercase;
+}
+nav ul li a:hover{
+   color: azure; /*adding color to text when hovered */
+}
+
+
+.items{
+  position: relative;
+}
+
+.items::after{
+   content: '';
+   cursor: pointer;
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   left: 0;
+   bottom: 0;
+   background: aliceblue;
+   transform: scale(0, 1);    /*start from (initial)0 to (end) 1 */
+   transition: transform 0.3s ease;
+}
+
+.items:hover::after{
+  transform: scale(1, 1);
+  color: aliceblue;
+}
+
+
+/* animated checkbox start*/
+
+.burger {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  scroll-padding-right: 100px;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+/* ending of checkbox animations*/
+
+
+/* Content section start */
+.content{
+  position: relative;
+  padding: 15% 15%;
+  padding-top: 200px;
+}
+
+.sub-tag{
+  font-size: 1.2rem;
+  color: #bd9a45;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.75em;
+}
+
+.tag-line{
+  font-size: 68px;
+  line-height: 80px;
+  color: aliceblue;
+  font-family: Playfair Display, sans-serif;
+}
+
+/* animation effects on buttons */
+
+.button{
+  position: relative;
+  font-size: 25px;
+  font-family: lato, sans-serif;
+  letter-spacing: 0.25em;
+  background-color:rgb(213, 229, 243);
+  padding: 20px 60px 20px;
+  margin-top: 20px;
+  border-radius: 15px;
+  z-index: 1;
+  border: 1px solid ;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  transition: .5s ease-in-out;
+  display: block;
+  z-index: -1;
+ }
+
+.button:hover{
+ color: aliceblue;
+}
+
+.button:hover::before{
+  width: 100%;
+  color: azure ;
+}
+
+ 
+/* About section start */
+
+section{
+  height: 60vh;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.line1{
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.line2{
+font-size: 4rem;
+}
+
+ .center .line1, .center .line2{
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+ }
+
+ 
+
+ .center .tag{
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.01;
+ }
+ 
+ .center p{
+  font-size: 20px;
+  width: 900px;
+  display: flex;
+  text-align: center;
+  color: aliceblue;
+  padding-top: 1rem ;
+ }
+
+ /* button in the section element */
+ .center .btn2{
+  display: flex;
+  align-items: center;
+  margin: auto;
+ }
+
